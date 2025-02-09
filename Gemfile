@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bulma-rails', '~> 0.6.1'
 # Simple forms
 gem 'simple_form', '~> 3.5'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'devise', '~> 4.3'
 
 
 
