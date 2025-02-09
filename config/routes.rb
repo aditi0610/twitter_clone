@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # get "/tweets/:id", to: "tweets#show", as: "tweet"      # Display a single tweet
 
   resources :tweets
+
+  root "tweets#index"
 end
