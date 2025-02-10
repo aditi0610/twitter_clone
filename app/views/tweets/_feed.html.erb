@@ -11,7 +11,7 @@
 	</article>
 </div>
 
-<% tweets.each do | tweet | %>
+<% @tweets.each do | tweet | %>
   <div class="box">
   	<article class="media">
   		<div class="media-left">
@@ -23,8 +23,15 @@
   			<div class="content">
   				<strong>Aditi Parihar</strong> <br />
   				<small>@webscratch</small><br />
-  				<p><%= tweet.tweet< %></p>
+  				<p><%= tweet.tweet %></p>
   			</div>
+  			<nav class="level">
+  				<div class="level-left is-mobile">
+  					<% link_to tweet, class: "level-item" do %>
+  					 <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+  					<% end %>
+  				</div>	
+  			</nav>
   		</div>
   	</article>
   </div>
