@@ -1,14 +1,14 @@
-<h2>THis is index page OR default page,where display all tweets!!</h2>
-<h1>Tweets</h1>
-<%= link_to 'New Tweet', new_tweet_path %>
-
-<ul>
-	<% @tweets.each do |tweet| %>
-	<li>
-		<%= tweet.tweet %>
-		<%= link_to 'Show', tweet %> |
-		<%= link_to 'Edit', edit_tweet_path(tweet) %> |
-		<%= link_to 'Delete', tweet, method: :delete, data: { confirm: "Are you sure?" } %>
-	</li>
-	<% end %>
-</ul>
+<% if @tweets.present? %>
+  <ul>
+    <% @tweets.each do |tweet| %>
+      <li>
+        <%= tweet.tweet %>
+        <%= link_to 'Show', tweet %> |
+        <%= link_to 'Edit', edit_tweet_path(tweet) %> |
+        <%= link_to 'Delete', tweet, method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No tweets found.</p>
+<% end %>
