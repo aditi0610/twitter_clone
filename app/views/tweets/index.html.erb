@@ -7,18 +7,4 @@
 	    </div>
 	</div>
 </section>
-		<% @tweets.each do |tweet| %>
-		<tr>
-			<td><%= tweet.tweet %></td>
-			<td><%= link_to 'Show', tweet %></td> 
-			<td><%= link_to 'Edit', edit_tweet_path(tweet) %></td> 
-			<td><%= link_to 'Delete', tweet, method: :delete, data: { confirm: "Are you sure?" } %></td>
-		</tr>
-		<% end %>
-	</ul>
- </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tweet', new_tweet_path %>
+		
