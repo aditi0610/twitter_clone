@@ -1,19 +1,24 @@
 <%# <h2>THis is index page OR default page,where display all tweets!!</h2> %>
-<div>
-<h1>Tweets</h1>
-</div>
-<div>
+
+<section class="section">
+	<div class="container">
+		<div class="columns">
+			
+	    </div>
+	</div>
+</section>
+		<% @tweets.each do |tweet| %>
+		<tr>
+			<td><%= tweet.tweet %></td>
+			<td><%= link_to 'Show', tweet %></td> 
+			<td><%= link_to 'Edit', edit_tweet_path(tweet) %></td> 
+			<td><%= link_to 'Delete', tweet, method: :delete, data: { confirm: "Are you sure?" } %></td>
+		</tr>
+		<% end %>
+	</ul>
+ </tbody>
+</table>
+
+<br>
+
 <%= link_to 'New Tweet', new_tweet_path %>
-</div>
-<div>
-<ul>
-	<% @tweets.each do |tweet| %>
-	<li>
-		<%= tweet.tweet %>
-		<%= link_to 'Show', tweet %> |
-		<%= link_to 'Edit', edit_tweet_path(tweet) %> |
-		<%= link_to 'Delete', tweet, method: :delete, data: { confirm: "Are you sure?" } %>
-	</li>
-	<% end %>
-</ul>
-</div>
