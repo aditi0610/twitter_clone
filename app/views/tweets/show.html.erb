@@ -1,8 +1,11 @@
 <%# <h1>display a SINGLE TWEET</h1> %>
+<p id="notice"><%= notice %></p>
 
-<h1>Tweet</h1>
-<p><%= @tweet.tweet %></p>
+<p>
+	<strong>Tweet:</strong>
+	<%= @tweet.tweet %>		
+</p>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %>
+<%= link_to 'Edit', edit_tweet_path(@tweet) %> | 
 <%= link_to 'Back', tweets_path %>
 

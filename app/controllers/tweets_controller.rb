@@ -15,6 +15,7 @@ class TweetsController < ApplicationController
     def create
         @tweet = Tweet.new(tweet_params)
         if @tweet.save
+            flash[:notice] = "Tweet was successfully created."
             redirect_to @tweet
         else
             render 'new'
