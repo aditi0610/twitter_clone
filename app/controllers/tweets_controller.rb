@@ -22,17 +22,17 @@ class TweetsController < ApplicationController
 
 
     def show
-        @tweet = Tweet.find(params[:id])
+        # @tweet = Tweet.find(params[:id])
     end
 
      
     def edit
-        @tweet = Tweet.find(params[:id])
+        # @tweet = Tweet.find(params[:id])
     end
 
 
     def destroy
-        @tweet = Tweet.find(params[:id])
+        # @tweet = Tweet.find(params[:id])
     end
 
 
@@ -42,5 +42,8 @@ class TweetsController < ApplicationController
         params.require(:tweet).permit(:tweet)
     end
     
+    def set_tweet 
+        @tweet = Tweet.find(params[:id])
+    end
 
 end
