@@ -1,4 +1,4 @@
-class TweetsController < ApplicationController
+ class TweetsController < ApplicationController
     before_action :set_tweet, only: [:show, :edit, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
 
@@ -9,12 +9,14 @@ class TweetsController < ApplicationController
 
 
     def new
-        @tweet = Tweet.new 
+        @tweet = current_user.tweets.build
+        # @tweet = Tweet.new 
     end
 
 
     def create
-        @tweet = Tweet.new(tweet_params)
+        # @tweet = Tweet.new(tweet_params)
+        @tweet = current_user.tweets.build(tweet_params)
         if @tweet.save
             flash[:notice] = "Tweet was successfully created."
             redirect_to root_path
