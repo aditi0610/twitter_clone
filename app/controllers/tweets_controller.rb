@@ -1,5 +1,5 @@
  class TweetsController < ApplicationController
-    before_action :set_tweet, only: [:show, :edit, :destroy]
+    before_action :set_tweet, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
 
     def index
@@ -37,14 +37,18 @@
     end
 
     def update
-        # @tweet = Tweet.find(params[:id]) 
-    
-        if @tweet.update(tweet_params)
-            redirect_to @tweet
-        else
-            render 'edit'
-        end
+      @tweet = Tweet.find_by(id: params[:id]) # Ensure @tweeet is assigned properly
+      
+      if @tweet.nil?
+        flash[:alert] = "Tweeet not found"
+        redirect_to tweets_path
+      elsif @tweet.update(tweet_params)
+        redirect_to @tweet, notice: 'Tweeet was successfully updated.'
+      else
+        render :edit
+      end
     end
+
 
     def destroy
         # @tweet = Tweet.find(params[:id])
