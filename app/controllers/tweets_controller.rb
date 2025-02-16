@@ -51,10 +51,14 @@
 
 
     def destroy
-        # @tweet = Tweet.find(params[:id])
-         @tweet.destroy
-
-        redirect_to tweets_path
+      if @tweet
+        @tweet.destroy
+        flash[:notice] = "Tweet was successfully deleted."
+      else
+        flash[:alert] = "Tweet not found."
+      end
+      
+      redirect_to tweets_path
     end
 
 
