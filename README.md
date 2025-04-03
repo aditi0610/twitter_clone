@@ -1,24 +1,24 @@
-# README
+# Twitter Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A feature-rich Twitter Clone built using **Ruby on Rails** with authentication, tweet creation, likes, retweets, and more.
 
-Things you may want to cover:
+## 🚀 Features
+- User authentication (Devise + JWT for API authentication)
+- Create, edit, and delete tweets
+- User profiles with bio, profile picture, and tweet history
+- Comment on tweets
 
-* Ruby version
+## 🛠️ Technologies Used
+- **Backend**: Ruby on Rails 5.1.4
+- **Database**: PostgreSQL / MySQL
+- **Authentication**: Devise & devise_token_auth
 
-* System dependencies
 
-* Configuration
+## ⚙️ Installation
+### Prerequisites
+Ensure you have the following installed:
+- Ruby 2.7.3
+- Rails 5.1.4
+- PostgreSQL / MySQL
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
